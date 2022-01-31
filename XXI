@@ -1,0 +1,82 @@
+import java.util.*;
+/**
+ * @author Clarynta
+ */
+public class XXI {
+public static void main(String[] args) {
+    String[][] film = {{"1.","Spiderman No Way Home (Reguler)"," | Studio 3"," | Waktu : 14.25", " | Harga : Rp.","35000"},{"2.","Uncharted (Reguler)"," | Studio 4"," | Waktu : 15.30"," | Harga : Rp.","35000"},{"3.","Venom 2 (Reguler)"," | Studio 2"," | Waktu : 17.25"," | Harga : Rp.","35000"}};
+    String nama = " " ,nomor_hp = " ",usia = " ",konfirmasi = " ";
+    int pilih_film = 0,uang_user = 0,harga_tiket = 0,jumlah_tiket = 0;
+    Scanner input = new Scanner(System.in);
+    // Sitem PBO
+    sistem operasi = new sistem();
+    operasi.intro(nama,nomor_hp,usia);
+    operasi.tiket(film,pilih_film,harga_tiket,jumlah_tiket,nama,nomor_hp,usia,konfirmasi,uang_user);
+    
+    System.out.println("=====Silahkan Melakukan Pembayaran=====");
+
+
+}
+
+}
+
+class sistem {
+    public Object intro;
+
+    public void intro(String nama,String nomor_hp,String usia){
+        Scanner input = new Scanner(System.in);
+        System.out.println("SELAMAT DATANG DI BIOSKOP XXI");
+        System.out.println("========Silahkan Masukan Data Anda========");
+    }
+    public void tiket(String[][]film,int pilih_film,int harga_tiket,int jumlah_tiket,String nama,String nomor_hp,String usia,String konfirmasi, int uang_user){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Nama: ");
+        nama = input.nextLine();
+        System.out.print("Nomor HP: ");
+        nomor_hp = input.nextLine();
+        System.out.print("Usia: ");
+        usia = input.nextLine();
+        
+        while (true) {
+            System.out.println("=======Pengen Nonton Apa?========");
+            for (int i = 0; i <= 2; i++) {
+                for (int j = 0; j <= 5; j++) {
+                    System.out.print(film[i][j]);
+                }
+                System.out.println();
+                System.out.println();
+            }
+            System.out.println("Pilih Nomor Film : ");
+            pilih_film = input.nextInt();
+            harga_tiket = Integer.parseInt(film[pilih_film - 1][5]);
+            System.out.println("Untuk Berapa Tiket? : ");
+            jumlah_tiket = input.nextInt();
+            System.out.println("======================================");
+            System.out.println("Tiket Yang Anda Pesan: ");
+            System.out.println("Nama : " + nama);
+            System.out.println("Nomor HP : " + nomor_hp);
+            System.out.println("Usia : " + usia);
+            for (int i = 0; i <= 3; i++) {
+                System.out.print(film[pilih_film - 1][i]);
+            } System.out.print(" | Jumlah Tiket : " +  jumlah_tiket + " | Harga : " + harga_tiket*jumlah_tiket);
+            System.out.println();
+            System.out.println("======================================");
+            System.out.println("Apakah Pesanan Tiket Sudah Sesuai? (Sudah/Belum)");
+            konfirmasi = input.next();
+            if (konfirmasi.equalsIgnoreCase("sudah")) {
+                break;
+            }
+            }
+            
+    System.out.println("Yang Harus Anda Bayar: Rp." + harga_tiket * jumlah_tiket);
+    System.out.print("Masukan Uang Anda: Rp.");
+    uang_user = input.nextInt();
+    if (uang_user < harga_tiket) {
+        System.out.println("Mohon Maaf. Uang Anda Kurang");
+    }else if(uang_user == harga_tiket) {
+        System.out.println("Terimakasih Telah Melakukan Pembayaran. Silahkan Menuju Studio Bioskop Sesuai Tiket");
+    }else if(uang_user > harga_tiket){
+        System.out.println("Terimakasih Telah Melakukan Pembayaran. Jangan Lupa Mengambil Kembalian Di Kasir");
+    }
+    }
+}
