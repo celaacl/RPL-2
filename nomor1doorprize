@@ -1,0 +1,33 @@
+package healing;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author celaacl
+ */
+public class Healing {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+
+        int bilangan_1;
+        int bilangan_2;
+
+        System.out.print("bilangan 1 = ");
+        bilangan_1 = input.nextInt();
+
+        System.out.print("bilangan 2 = ");
+        bilangan_2 = input.nextInt();
+
+        if (bilangan_1 < bilangan_2) {
+            System.out.println("bilangan yang lebih besar = " + bilangan_2);
+        } else {
+            System.out.println("bilangan yang lebih besar = " + bilangan_1);
+        }
+    }
+}
