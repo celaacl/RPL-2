@@ -1,0 +1,35 @@
+package healing;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author celaacl
+ */
+public class Healing {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner scn = new Scanner(System.in);
+
+        System.out.print("Masukkan nilai a = ");
+        int a = scn.nextInt();
+        System.out.print("Masukkan nilai b (lebih kecil dari nilai a)= ");
+        int b = scn.nextInt();
+
+        int hasil = a + b;
+        System.out.println("Hasil Penjumlahan a + b adalah = " + hasil);
+
+        hasil = a - b;
+        System.out.println("Hasil Pengurangan a - b adalah = " + hasil);
+
+        hasil = a * b;
+        System.out.println("Hasil Perkalian a * b adalah = " + hasil);
+
+        double hasil2 = (double) a / b;
+        System.out.println("Hasil Pembagian a / b adalah = " + hasil2);
+    }
+}
